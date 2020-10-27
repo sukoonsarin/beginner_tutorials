@@ -11,3 +11,4 @@
 8. Writing a ROS publisher and subscriber - Complete
 9. Updated CMakeLists.txt for build
 10. Examining Publisher and Subscriber Tutorial - Complete
+11. Added custom string message - Complete.
