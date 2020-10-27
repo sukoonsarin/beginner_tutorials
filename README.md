@@ -30,28 +30,28 @@ Make sure the following dependencies are on your system before you clone this re
 
 # Standard install via command-line
 
-cd <<Your_catkin_workspace>>/src
-mkdir beginner_tutorials
-cd beginner_tutorials
-git clone --recursive https://github.com/sukoonsarin/beginner_tutorials
-cd ../..
-catkin_make
+    cd <<Your_catkin_workspace>>/src
+    mkdir beginner_tutorials
+    cd beginner_tutorials
+    git clone --recursive https://github.com/sukoonsarin/beginner_tutorials
+    cd ../..
+    catkin_make
 
 In 3 terminal windows, run the following commands:
 
-    **Terminal 1:**
+**Terminal 1:**
 
-roscore
+    roscore
 
-    **Terminal 2:**
+**Terminal 2:**
 
-cd <<Your_catkin_workspace>>
-source devel/setup.bash
-rosrun beginner_tutorials talker
+    cd <<Your_catkin_workspace>>
+    source devel/setup.bash
+    rosrun beginner_tutorials talker
 
-    **Terminal 3:**
+**Terminal 3:**
 
-cd <<Your_catkin_workspace>>
-source devel/setup.bash
-rosrun beginner_tutorials listener
+    cd <<Your_catkin_workspace>>
+    source devel/setup.bash
+    rosrun beginner_tutorials listener
 
