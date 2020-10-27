@@ -8,3 +8,4 @@
 5. Build ROS package Tutorial - Complete
 6. Understanding ROS Nodes Tutorial - Complete
 7. Understanding ROS topics Tutorial - Complete
+8. Writing a ROS publisher and subscriber - Complete
