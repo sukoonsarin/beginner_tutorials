@@ -7,3 +7,4 @@
 4. Create beginner_tutorials package - Complete
 5. Build ROS package Tutorial - Complete
 6. Understanding ROS Nodes Tutorial - Complete
+7. Understanding ROS topics Tutorial - Complete
