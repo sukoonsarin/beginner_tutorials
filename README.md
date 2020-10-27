@@ -9,3 +9,5 @@
 6. Understanding ROS Nodes Tutorial - Complete
 7. Understanding ROS topics Tutorial - Complete
 8. Writing a ROS publisher and subscriber - Complete
+9. Updated CMakeLists.txt for build
+10. Examining Publisher and Subscriber Tutorial - Complete
