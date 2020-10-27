@@ -12,3 +12,4 @@
 9. Updated CMakeLists.txt for build
 10. Examining Publisher and Subscriber Tutorial - Complete
 11. Added custom string message - Complete.
+12. Modified the tutorial code to follow Google C++ Style Guide- Complete
