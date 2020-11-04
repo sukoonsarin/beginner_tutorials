@@ -37,6 +37,11 @@ int main(int argc, char **argv) {
    */
   ros::init(argc, argv, "talker");
 
+  int frequency = 5;
+
+  if (argc >= 2)
+    int frequency = atoi(argv[1]);
+
   /**
    * NodeHandle is the main access point to communications with the ROS system.
    * The first NodeHandle constructed will fully initialize this node, and the last
@@ -64,7 +69,16 @@ int main(int argc, char **argv) {
   ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
   ros::ServiceServer server = n.advertiseService("UpdateString", UpdateString);
 
-  ros::Rate loop_rate(10);
+  ros::Rate loop_rate(frequency);
+  ROS_DEBUG_STREAM("User input frequency is: " << frequency);
+
+  if (frequency < 0) {
+    ROS_FATAL_STREAM("The input frequency is invalid");
+    frequency = 5;
+  } else if (frequency == 0) {
+    ROS_ERROR_STREAM("Input frequency cannot be 0");
+    frequency = 5;
+  }
 
   /**
    * A count of how many messages we have sent. This is used to create
