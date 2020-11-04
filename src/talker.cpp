@@ -54,7 +54,7 @@ bool UpdateString(
     beginner_tutorials::UpdateString::Response& response) {
 
   originalMessage = request.inputString;
-  response.UpdateString = "User modified the original string to: "
+  response.outputString = "User modified the original string to: "
       + request.inputString;
   ROS_WARN_STREAM("User modified the message");
   return true;
