@@ -37,7 +37,7 @@ Make sure the following dependencies are on your system before you clone this re
     Ubuntu 18.04
     C++ 11
 
-To install ROS Kinetic:
+To install ROS Melodic:
 http://wiki.ros.org/melodic/Installation
 
 To install catkin: 
