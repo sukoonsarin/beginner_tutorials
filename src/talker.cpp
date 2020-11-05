@@ -108,7 +108,7 @@ int main(int argc, char **argv) {
   ros::ServiceServer server = n.advertiseService("UpdateString", UpdateString);
 
   ros::Rate loop_rate(frequency);
-  ROS_DEBUG_STREAM("User input frequency is: " << frequency);
+  ROS_WARN_STREAM("User input frequency is: " << frequency);
   /*
    * This function is to demonstrate uses of different logger levels
    */
