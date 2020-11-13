@@ -22,6 +22,8 @@
 18. Definined srv file
 19. Implemented ROS service to change output of publisher node with logger levels
 20. Used rqt_console and rqt_logger_levels
+21. Added TF functionality 
+22. Added ROStest
 
 # Overview
 
@@ -110,3 +112,75 @@ roslaunch beginner_tutorials Week9_HW.launch frequency:=<any integer above zero>
 **Example:**
 
     roslaunch beginner_tutorials Week19_HW.launch frequency:=10
+
+
+### TF Frames
+The Talker node broadcasts /talker frame which has a non-zero translation and rotation with respect to the /world frame. 
+One can check the TF frames using tools tf_echo and rqt_tf_tree. The translation vector in the code uses 
+random values generated between (0,100), hence the translation changes in every loop. Using tf_echo, we can see 
+the values of translation and rotation vectors in the terminal, while the talker node is running on the other terminal. 
+
+To run frames:
+```
+cd <<Your_catkin_workspace>>
+source devel/setup.bash
+rosrun beginner_tutorials talker
+```
+In other terminal
+```
+cd <<Your_catkin_workspace>>
+source devel/setup.bash
+rosrun tf tf_echo /world /talk
+```
+To see the pdf file of tf frame:
+
+```
+cd catkin_ws
+source devel/setup.bash
+rosrun tf view_frames
+
+```
+### ROSTEST
+
+To run test case for talker node, open a new terminal and:
+```
+cd <<Your_catkin_workspace>>
+catkin_make
+source devel/setup.bash
+rostest beginner_tutorials talkerTest.launch
+```
+### ROSBAG
+A .bag file will record all the published data. After running the Publisher/Subscriber node,we can view the 
+full list of topics that are currently being published in the running system by running this in a new terminal:
+```
+rostopIn one terminal:
+```
+cd <<Your_catkin_workspace>>
+source devel/setup.bash
+roslaunch beginner_tutorials Week10_HW.launch rosbagEnable:=true
+```
+You can now set the record parameter to true in order to record bag file
+
+To be able to play the rosbag:
+
+In one terminal:
+
+```
+roscore
+```
+In a second terminal:
+
+```
+cd <<Your_catkin_workspace>>
+source devel/setup.bash
+rosbag play src/beginner_tutorials/results/beginner_tutorials.bag
+
+```
+
+In a 3rd terminal:
+
+```
+cd <<Your_catkin_workspace>>
+source devel/setup.bash
+rosrun beginner_tutorials listener
+```
