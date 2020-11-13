@@ -4,6 +4,7 @@
         value="$(find beginner_tutorials)/config/config.conf"
     />
     <arg name = "frequency" default = "5" />
+    <arg name = "rosbagEnable" default = "false" />
     <node
         pkg = "beginner_tutorials"
         type = "talker"
@@ -19,4 +20,11 @@
         output = "screen"
         launch-prefix = "gnome-terminal -e"
     />
+    <node 
+        pkg = "rosbag"
+        type = "record"
+        name = "record"
+        args = "-a -O records.bag"
+        if="$(arg rosbagEnable)"
+     />
 </launch>
