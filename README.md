@@ -153,8 +153,6 @@ rostest beginner_tutorials talkerTest.launch
 A .bag file will record all the published data. After running the Publisher/Subscriber node,we can view the 
 full list of topics that are currently being published in the running system by running this in a new terminal:
 ```
-rostopIn one terminal:
-```
 cd <<Your_catkin_workspace>>
 source devel/setup.bash
 roslaunch beginner_tutorials Week10_HW.launch rosbagEnable:=true
