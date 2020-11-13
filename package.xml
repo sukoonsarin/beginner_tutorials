@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>beginner_tutorials</name>
-  <version>0.2.0</version>
+  <version>0.3.0</version>
   <description>The beginner_tutorials package</description>
 
   <maintainer email="sukoonsarin@gmail.com">sukoon</maintainer>
@@ -16,6 +16,8 @@
   <build_depend>rospy</build_depend>
   <build_depend>std_msgs</build_depend>
   <build_depend>message_generation</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>rostest</build_depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
   <build_export_depend>std_msgs</build_export_depend>
@@ -23,7 +25,8 @@
   <exec_depend>rospy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>message_runtime</exec_depend>
-
+  <exec_depend>tf</exec_depend>
+  <exec_depend>rostest</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
