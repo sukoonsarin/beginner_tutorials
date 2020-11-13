@@ -36,13 +36,14 @@
  * @brief Implementation of a ROS publisher from ROS
  *        beginner tutorials
  */
-#include <sstream>
-#include <string>
-#include "ros/ros.h"
-#include "std_msgs/String.h"
-#include "beginner_tutorials/UpdateString.h"
 #include <tf/transform_broadcaster.h>
 #include <cstdlib>
+#include <sstream>
+#include <string>
+#include "beginner_tutorials/UpdateString.h"
+#include "ros/ros.h"
+#include "std_msgs/String.h"
+
 
 std::string originalMessage = "hey, this is sukoon sarin talking";
 
@@ -76,7 +77,7 @@ int main(int argc, char **argv) {
    */
   ros::init(argc, argv, "talker");
 
-   //transform broadcaster object
+  // transform broadcaster object
   static tf::TransformBroadcaster br;
   tf::Transform transform;
 
@@ -125,6 +126,9 @@ int main(int argc, char **argv) {
     frequency = 5;
   }
 
+  // For using rand_r() to have effecient multi-threading
+  unsigned int seed = time(NULL);
+
   /**
    * A count of how many messages we have sent. This is used to create
    * a unique string for each message.
@@ -150,12 +154,15 @@ int main(int argc, char **argv) {
      * in the constructor above.
      */
     chatter_pub.publish(msg);
+    transform.setOrigin(
+        tf::Vector3(rand_r(&seed) % 100, rand_r(&seed) % 100,
+                    rand_r(&seed) % 100));
 
-    transform.setOrigin(tf::Vector3(rand() % 100, rand() % 100, rand() % 100));
     tf::Quaternion q;
     q.setRPY(0, 0, 1);
     transform.setRotation(q);
-    br.sendTransform( tf::StampedTransform(transform, ros::Time::now(), "world", "talk"));
+    br.sendTransform(tf::StampedTransform(transform,
+         ros::Time::now(), "world", "talk"));
 
     ros::spinOnce();
 

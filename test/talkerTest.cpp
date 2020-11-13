@@ -46,7 +46,8 @@
  */
 TEST(testTalkerNode, testTextUpdation) {
   ros::NodeHandle nh;
-  ros::ServiceClient client = nh.serviceClient<beginner_tutorials::UpdateString>("updateText");
+  ros::ServiceClient client = nh.serviceClient<beginner_tutorials::
+      UpdateString>("updateText");
   EXPECT_TRUE(client.waitForExistence(ros::Duration(5)));
 }
 
