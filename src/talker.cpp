@@ -42,11 +42,11 @@
 #include "std_msgs/String.h"
 #include "beginner_tutorials/UpdateString.h"
 
-extern std::string originalMessage = "hey, this is sukoon sarin talking";
+std::string originalMessage = "hey, this is sukoon sarin talking";
 
 /**
- * Created function to add the service of adding custom message.
- * We create Request and Response objects defined in the srv file.
+ * @brief : Function to add the service of adding custom message.
+ * @return : bool value, indicating execution of function as successful
  */
 
 bool UpdateString(
@@ -78,7 +78,7 @@ int main(int argc, char **argv) {
   int frequency = 5;
 
   if (argc >= 2)
-    int frequency = atoi(argv[1]);
+    frequency = atoi(argv[1]);
 
   /**
    * NodeHandle is the main access point to communications with the ROS system.
